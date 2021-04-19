@@ -26,7 +26,7 @@ func Init() {
 	password := getEnv("DB_PASSWORD", "")
 	host := getEnv("DB_HOST", "localhost")
 	port := getEnv("DB_PORT", "3306")
-	database := getEnv("DB_NAME", "jbh_db")
+	database := getEnv("DB_NAME", "sample_db")
 
 	dbinfo := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		user,

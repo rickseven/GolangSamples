@@ -1,9 +1,10 @@
 package product
 
 import (
-	"jbh-product/db"
-	"jbh-product/models"
 	"net/http"
+
+	"github.com/rickseven/GolangSamples/db"
+	"github.com/rickseven/GolangSamples/models"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,7 +25,6 @@ func Create(c *gin.Context) {
 		})
 		return
 	}
-	db.Create(&product)
 
 	if err := db.Create(&product).Error; err != nil {
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{

@@ -1,11 +1,11 @@
 package main
 
 import (
-	db "jbh-product/db"
-	product "jbh-product/services"
 	"log"
 
 	"github.com/gin-gonic/gin"
+	db "github.com/rickseven/GolangSamples/db"
+	product "github.com/rickseven/GolangSamples/services"
 )
 
 func main() {
