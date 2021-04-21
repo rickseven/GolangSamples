@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	db "github.com/rickseven/GolangSamples/db"
-	product "github.com/rickseven/GolangSamples/services"
+	db "github.com/rickseven/golang-docker-sample/db"
+	product "github.com/rickseven/golang-docker-sample/services"
 )
 
 func main() {

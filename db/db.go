@@ -7,28 +7,29 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/joho/godotenv"
 )
 
 var db *gorm.DB
 var err error
 
-func getEnv(key, fallback string) string {
-	if value, ok := os.LookupEnv(key); ok {
-		return value
-	}
-	return fallback
-}
-
 // Init creates a connection to mysql database and
 // migrates any new models
 func Init() {
-	user := getEnv("DB_USER", "root")
-	password := getEnv("DB_PASSWORD", "")
-	host := getEnv("DB_HOST", "localhost")
-	port := getEnv("DB_PORT", "3306")
-	database := getEnv("DB_NAME", "sample_db")
+	err = godotenv.Load()
+	if err != nil {
+		log.Fatalf("Error getting env, %v", err)
+	} else {
+		fmt.Println("We are getting the env values")
+	}
 
-	dbinfo := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
+	user := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASSWORD")
+	host := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
+	database := os.Getenv("DB_NAME")
+
+	dbinfo := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		user,
 		password,
 		host,

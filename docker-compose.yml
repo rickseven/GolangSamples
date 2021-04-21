@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  golang-docker-sample:
+    container_name: golang-docker-sample
+    build: .
+    ports:
+      - 8081:8081
+    restart: on-failure

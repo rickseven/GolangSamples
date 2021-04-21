@@ -1,9 +1,28 @@
 # Description
-This is a sample REST API with golang, in this example I use the Gorm library as an object relational mapping (ORM) and Gin as the web framework.
 
-There are two endpoints:
+This is a sample RESTful API with golang on docker, in this example I use the Gorm library as an object relational mapping (ORM) and Gin as the web framework.
+
+For the database I use MySQL on my host machine and access it from docker container.
+
+# How To Run
+
+By default this project set up for running on docker. But if you want to run on your local machine directly you need to change `DB_HOST=host.docker.internal` to `DB_HOST=localhost` in .env file then run this command 
+```
+go run main.go
+```
+
+If you docker user then run this command
+```
+docker-compose up --build
+```
+
+To try, access this URL [http://localhost:8081/api/v1/products](http://localhost:8081/api/v1/products/).
+
+# API Endpoints
 
 `GET /api/v1/products`
+
+To get all products.
 
 Example response body:
 
@@ -19,6 +38,8 @@ Example response body:
 ```
 
 `POST /api/v1/products`
+
+To create a product.
 
 Example request body:
 
