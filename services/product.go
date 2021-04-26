@@ -3,8 +3,8 @@ package product
 import (
 	"net/http"
 
-	"github.com/rickseven/golang-docker-sample/db"
-	"github.com/rickseven/golang-docker-sample/models"
+	"github.com/rickseven/dockerized-golang-mysql-api-sample/db"
+	"github.com/rickseven/dockerized-golang-mysql-api-sample/models"
 
 	"github.com/gin-gonic/gin"
 )

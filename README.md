@@ -1,22 +1,22 @@
 # Description
 
-This is a sample RESTful API with golang on docker, in this example I use the Gorm library as an object relational mapping (ORM) and Gin as the web framework.
-
-For the database I use MySQL on my host machine and access it from docker container.
+This is a sample of RESTful API with Golang and MySQL in Docker, in this example I use the Gorm library as an object relational mapping (ORM) and Gin as the web framework. Also, I use phpMyAdmin to manage the database in Docker.
 
 # How To Run
 
-By default this project set up for running on docker. But if you want to run on your local machine directly you need to change `DB_HOST=host.docker.internal` to `DB_HOST=localhost` in .env file then run this command 
+By default, this project created to run in Docker. If you want to run without docker in your local machine directly you need to change database host from `DB_HOST=mysql-service` to `DB_HOST=localhost` in .env file then run this command 
 ```
 go run main.go
 ```
 
-If you docker user then run this command
+If you are docker user then run this command
 ```
 docker-compose up --build
 ```
 
 To try, access this URL [http://localhost:8081/api/v1/products](http://localhost:8081/api/v1/products/).
+
+Then to create the table and insert sample data, run SQL script on `sample_db.sql` file in phpMyAdmin, you can access phpMyAdmin on [http://localhost:9090](localhost:9090).
 
 # API Endpoints
 
