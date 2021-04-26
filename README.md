@@ -16,7 +16,7 @@ docker-compose up --build
 
 To try, access this URL [http://localhost:8081/api/v1/products](http://localhost:8081/api/v1/products/).
 
-Then to create the table and insert sample data, run SQL script on `sample_db.sql` file in phpMyAdmin, you can access phpMyAdmin on [http://localhost:9090](localhost:9090).
+Then to create the table and insert sample data, run SQL script on `sample_db.sql` file in phpMyAdmin, you can access phpMyAdmin on [http://localhost:9090](http://localhost:9090).
 
 # API Endpoints
 
